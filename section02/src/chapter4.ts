@@ -84,6 +84,7 @@ let countryCodes: CountryCodes = {
   Brazil: "bz",
 };
 
+// 만약 국가 코드를 숫자로 보관하는 객체가 하나 더 필요하다고 하면 그때의 타입은 다음과 같이 정의하면 됩니다.
 type CountryNumberCodes = {
   [key: string]: number;
 };
