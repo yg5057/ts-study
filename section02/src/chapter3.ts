@@ -1,5 +1,5 @@
-// [ 객체 타입을 정의하는 방법 ]
-// 1. object 타입
+// 1. 객체 타입을 정의하는 방법
+// 1.1. object 타입
 // let user: object = {
 //   id: 1,
 //   name: "이정환",
@@ -9,7 +9,7 @@
 // -> 이유는 타입스크립트의 object 타입은 단순 값이 객체임을 표현하는 것 외에는 아무런 정보도 제공하지 않는 타입이기 때문
 // 변수 user에 저장된 객체의 구조를 그대로 타입으로 만들고 싶다면 -> "객체 리터럴 타입"을 사용해야함
 
-// 2. 객체 리터럴 타입
+// 1.2. 객체 리터럴 타입
 let user: {
   id: number;
   name: string;
@@ -38,4 +38,25 @@ let dog: {
 // -> 이런 특징을 '구조적 타입 시스템' 이라고 부름'
 // 마치 name과 color가 있는 객체는 '강아지 타입'이야 라고 보는 것과 비슷함!
 
-// [ 특수한 프로퍼티 정의하기 ]
+// 2. 선택적 프로퍼티(optional property)
+let user2: {
+  id?: number; // 있어도 되고 없어도 되는 **선택적 프로퍼티** 일 경우
+  name: string;
+} = {
+  id: 1,
+  name: "이정환",
+};
+user2 = {
+  name: "홍길동",
+};
+// ?주의: 선택적 프로퍼티 존재시 value 타입은 반드시 number여야 함.
+
+// 3. 읽기전용 프로퍼티(readonly property)
+let user3: {
+  id?: number;
+  readonly name: string; // name은 이제 Readonly 프로퍼티가 되었음
+} = {
+  id: 1,
+  name: "이정환",
+};
+// user3.name = "dskfd"; // Readonly 프로퍼티의 값을 수정하려고 하면 오류가 발생
