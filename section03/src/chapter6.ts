@@ -61,4 +61,4 @@ let post: Post = {
 };
 
 const len: number = post.author!.length;
-// '!': non-null단언 연산자 -> author의 값이 null 이거나 undefined가 아니라고 단언해주는것
+// '!': non-null단언 연산자 -> author의 값이 null 이거나 undefined가 아니라고 단언해주는것!
